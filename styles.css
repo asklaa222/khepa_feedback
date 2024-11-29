@@ -1,0 +1,191 @@
+/* 기본 스타일 설정 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: aqua;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* 버튼 hover 효과 */
+button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+/* 전체 애플리케이션 영역 */
+#app {
+    padding: 15px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* 평가 항목 스타일 */
+.evaluation-item {
+    margin-bottom: 20px;
+}
+
+.evaluation-item label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 원 스타일 및 레이아웃 설정 */
+.circle-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* 원 간격을 줄임 */
+    flex-wrap: nowrap; /* 원들이 한 줄에 배치되도록 설정 */
+    margin-top: 15px;
+    overflow-x: auto; /* 화면을 넘칠 경우 가로로 스크롤 가능하게 설정 */
+}
+
+/* 원의 기본 스타일 */
+.circle {
+    width: 60px;  /* 기본 크기 */
+    height: 60px;
+    border-radius: 50%;
+    background-color: lightgray;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 원 hover 효과 */
+.circle:hover {
+    background-color: #4CAF50;
+    transform: scale(1.1); /* 원을 클릭할 때 부드럽게 확대 */
+}
+
+/* 선택된 원 스타일 */
+.circle.selected {
+    background-color: #45a049;
+}
+
+/* 원 안의 숫자 색상 */
+.circle-percent {
+    color: white;
+    font-size: 18px;
+}
+
+/* 레이블 스타일 */
+.label {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.label.left {
+    left: -55px;
+}
+
+.label.right {
+    right: -55px;
+}
+
+/* 버튼 스타일 */
+button {
+    padding: 12px 24px;
+    margin: 15px 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* 기본 버튼 스타일 */
+button[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* 버튼 hover 효과 */
+button[type="button"]:hover {
+    background-color: #45a049;
+}
+
+/* 모바일 화면을 위한 스타일 */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    /* 원 크기 및 텍스트 크기 */
+    .circle {
+        width: 50px;  /* 원 크기 조정 */
+        height: 50px;
+        font-size: 14px; /* 글자 크기 조정 */
+    }
+
+    /* 원 간격 조정 */
+    .circle-rating {
+        gap: 5px;
+    }
+
+    /* 레이블 글자 크기 조정 */
+    .label {
+        font-size: 12px;
+    }
+
+    /* 버튼 크기 조정 */
+    button[type="button"] {
+        padding: 10px 20px;
+    }
+
+    /* 헤더 크기 조정 */
+    header {
+        font-size: 14px;
+    }
+
+    /* 평가 항목 레이블 글자 크기 */
+    .evaluation-item label {
+        font-size: 14px;
+    }
+
+    /* 앱 패딩 조정 */
+    #app {
+        padding: 10px;
+    }
+}
+
+/* 작은 화면에 대한 추가 스타일 */
+@media (max-width: 400px) {
+    .circle-rating {
+        gap: 3px; /* 더 작은 화면에서 원 간격 줄임 */
+    }
+
+    .circle {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+}
+
+/* "Created by me" 스타일 추가 */
+.created-by {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    font-style: italic;
+}
